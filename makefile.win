@@ -12,7 +12,7 @@ AR = ar
 
 ###############################################################################
 # compiler options
-CFLAGS = -g -DUSE_BLAS -DDOUBLEPRECISION=0 -D_REENTRANT -I . -I$(STKINCL) -I$(STKINCL)\\gnu \
+CFLAGS = -g -DUSE_BLAS -DDOUBLEPRECISION=0 -D_REENTRANT -I . -I$(STKINCL) -I$(STKINCL)/gnu \
          -D NN_FAST_EXP -D WIN32 -O2 -L$(STKLIB)
 CXXFLAGS = $(CFLAGS)
 
@@ -24,10 +24,11 @@ LDLIBS = -lSTKLib -lwinmm $(BLASLIB)
 
 ###############################################################################
 # compiler binary
-# CROSS_COMPILE ?= x86_64-linux-
+CROSS_COMPILE ?= i586-mingw32msvc-
 
 CC  := $(CROSS_COMPILE)g++
 CXX := $(CROSS_COMPILE)g++
+RANLIB := $(CROSS_COMPILE)ranlib
 
 
 DLLTOOL=dlltool
@@ -61,12 +62,40 @@ O_FILES   = melbanks.o \
             sxmlparser.o \
             getopt.o
 
+A_FILES   = melbanks.o \
+            dspc.o \
+            traps.o \
+            nn.o \
+            configz.o \
+            alaw.o \
+            wfsource.o \
+            netgen.o \
+            srec.o \
+            filename.o \
+            kwsnetg.o \
+            thresholds.o \
+            encode.o \
+            myrand.o \
+            lexicon.o \
+            gptrans.o \
+            fsm.o \
+            fsmcache.o \
+            phntrans.o \
+            phntranscheck.o \
+            norm.o \
+            decoder.o \
+            phndecalize.o \
+            stkinterface.o \
+            plp.o \
+            sxmlparser.o \
+            getopt.o
+
 
 .PHONY : all clean depend
 
 ###############################################################################
 # default rule
-all : libSTKLib.a phnrec
+all : libSTKLib.a phnrec vadalize
 
 
 ###############################################################################
@@ -75,16 +104,18 @@ libphnrec.a: $(O_FILES)
 
 ###############################################################################
 libSTKLib.a:
-	cd STKLib && make -f makefile.win && cd ..
+	cd STKLib && make -f Makefile.win && $(RANLIB) libSTKLib.a && cd ..
 
 ###############################################################################
 phnrec : phnrec.o $(O_FILES)
 
+vadalize: vadalize.o $(A_FILES)
 
 ###############################################################################
 clean :
 	rm -f *.o
 	rm -f phnrec.exe
+	rm -f vadalize.exe
 	rm -f STKLib/*.o
 	rm -f STKLib/*.a
 	rm -f STKLib/gnu/*.o
