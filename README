@@ -1,0 +1,54 @@
+The phoneme recognizer was developed at Brno University of Technology, Faculty of Information Technology and was successfully applied to tasks including language identification [4], indexing and search of audio records, and keyword spotting [5]. The main purpose of this distribution is research. Outputs from this phoneme recognizer can be used as a baseline for subsequent processing, as for example phonotactic language modeling.
+
+
+Authors:
+Petr Schwarz , Pavel Matejka, Lukas Burget, Ondrej Glembek
+
+Description
+Split temporal context (STC) [1, 2, 3] based feature extraction
+Neural network classifiers
+Viterbi algorithm is used for phoneme string decoding
+English systems was trained on the TIMIT database
+Czech, Hungarian and Russian systems were trained on the SpeechDat-E databases
+
+
+
+Compilation:
+The source code has been successfully compiled under Linux (GCC) and under Windows (MinGW32). The program can be compiled with or without BLAS (Basic Linear Algebra Subprograms) for acceleration. The ATLAS (Automatically Tuned Linear Algebra Software) is used in this case.
+Compilation under Linux with BLASsupport
+make -f makefile.lin
+Compilation under Linux without BLASsupport
+make -f makefile_noblas.lin
+Compilation under Windows with BLAS support
+make -f makefile.win
+Compilation under Windows without BLASsupport
+make -f makefile_noblas.win
+
+How to:
+set the recognition system
+phnrec -c PHN_CZ_SPDAT_LCRC_N1500|PHN_HU_SPDAT_LCRC_N1500|PHN_RU_SPDAT_LCRC_N1500|
+PHN_EN_TIMIT_LCRC_N500
+set the input format:
+phnrec -c PHN_EN_TIMIT_LCRC_N500 -w alaw|lin16
+set input and output filesThe output is the HTK label file or Master Label File (MLF). Input is either speech file or a list of files. The recognizer can also save intermediate results like Mel-banks or posteriors. Saving of intermediate results can for example significantly speed-up tuning of word insertion penalty. 
+phnrec -c PHN_EN_TIMIT_LCRC_N500 -l list -m out.mlf
+#!MLF!#
+"*/faem0.rec"
+000000 1300000 pau
+1300000 2000000 ah
+2000000 3500000 s
+3500000 4500000 ih
+
+phnrec -c PHN_EN_TIMIT_LCRC_N500 -i input.raw -o output.rec
+change the word (phoneme) insertion penalty:
+phnrec -c PHN_EN_TIMIT_LCRC_N500 -i input.raw -o output.rec -p -3.0
+Systems:
+PHN_CZ_SPDAT_LCRC_N1500 - 8kHz, 2 block STC, trained on Czech SpeechDat-E, 15 banks, 31 points, the DCT is applied on each temporal vector to reduce its size to 11 values, 1500 neurons in all nets
+PHN_HU_SPDAT_LCRC_N1500 - 8kHz, 2 block STC, trained on Hungarian SpeechDat-E, 15 banks, 31 points, the DCT is applied on each temporal vector to reduce its size to 11 values, 1500 neurons in all nets
+PHN_RU_SPDAT_LCRC_N1500 - 8kHz, 2 block STC, trained on Russian SpeechDat-E, 15 banks, 31 points, the DCT is applied on each temporal vector to reduce its size to 11 values, 1500 neurons in all nets
+PHN_EN_TIMIT_LCRC_N500 - 16kHz, 2 block STC, trained on TIMIT, 15 banks, 31 points, the DCT is applied on each temporal vector to reduce its size to 11 values, 500 neurons in all nets
+
+Note: The Czech, Hungarian and Russian SpeechDat systems were used in NIST LRE2005.
+Results obtained by this system can slightly differ from published ones due to implementation.
+Licence:
+Source codes and binaries can be redistributed and/or modified under the terms of the GNU General Public License as published by the Free Software Foundation; either version 2 of the License, or (at your option) any later version. Model files (directories PHN_CZ_SPDAT_LCRC_N1500, PHN_HU_SPDAT_LCRC_N1500, PHN_RU_SPDAT_LCRC_N1500, PHN_EN_TIMIT_LCRC_N500) can be used for research and educational purposes only. For any other use, please contact Jan Cernocky.

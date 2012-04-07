@@ -1,0 +1,25 @@
+/*******************************************************************************
+ * Copyright:     (C) 2004-2006 by Petr Schwarz & Pavel Matejka & Lukas Burget *
+ *                Department of Computer Graphics and Multimedia,              *
+ *                Faculty of Information Technology,                           *
+ *                Brno University of Technology                                *
+ *                                                                             *
+ * Email:         {schwarzp,matejkap,burget}@fit.vutbr.cz                      *
+ *******************************************************************************/
+
+1) The program (source files and binary version)
+
+The program is free software; you can redistribute it and/or modify 
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation; either version 2 of the License, or 
+(at your option) any later version.                                  
+
+
+2) Model files (directories PHN_CZ_SPDAT_LCRC_N1500, PHN_HU_SPDAT_LCRC_N1500, 
+   PHN_RU_SPDAT_LCRC_N1500, PHN_EN_TIMIT_LCRC_N500)   
+
+Licence for use for research and educational purposes is granted. 
+For any other use, please contact Jan Cernocky (cernocky@fit.vutbr.cz)
+
+
+  

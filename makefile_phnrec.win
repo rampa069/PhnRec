@@ -1,0 +1,65 @@
+###############################################################################
+
+BLASLIB  = mkl_c.lib libguide.lib 
+SOUNDLIB = winmm.lib
+
+###############################################################################
+# compiler options
+CFLAGS = -DUSE_BLAS -EHs -I. -D NN_FAST_EXP -D WIN32 -D PHNREC_ONLY -O2
+CXXFLAGS = $(CFLAGS)
+
+###############################################################################
+# linker options
+LDFLAGS = 
+LDLIBS = $(SOUNDLIB) $(BLASLIB)
+
+
+###############################################################################
+# compiler binary
+# CROSS_COMPILE ?= x86_64-linux-
+
+CC  = $(CROSS_COMPILE)cl
+CXX = $(CROSS_COMPILE)cl
+
+
+O_FILES   = melbanks.obj \
+            dspc.obj \
+            traps.obj \
+            nn.obj \
+            configz.obj \
+            alaw.obj \
+            wfsource.obj \
+            srec.obj \
+            filename.obj \
+            norm.obj \
+            decoder.obj \
+            phndec.obj \
+            sxmlparser.obj \
+            getopt.obj \
+            phnrec.obj
+
+
+###############################################################################
+# default rule
+all : phnrec.exe
+
+
+###############################################################################
+phnrec.exe : $(O_FILES)
+	$(CC) -Fephnrec.exe $(CXXFLAGS) $(O_FILES) $(SOUNDLIB) $(BLASLIB)
+
+###############################################################################
+clean :
+	rm -f *.obj
+	rm -f phnrec.exe
+
+###############################################################################
+
+# nmake
+.cpp.obj:
+	$(CC) $(CXXFLAGS) -c -Fo$*.obj $*.cpp 
+
+# make
+%.obj : %.cpp;
+	$(CC) $(CXXFLAGS) -c -Fo$*.obj $*.cpp
+

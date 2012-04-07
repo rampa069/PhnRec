@@ -1,0 +1,67 @@
+##############################################################################
+# archiver binary
+AR = ar
+
+##############################################################################
+# compiler options
+CFLAGS = -Wall -g -DDOUBLEPRECISION=0 -D_REENTRANT -I./gnu -O2
+CXXFLAGS = $(CFLAGS)
+
+###############################################################################
+# linker options
+LDLIBS = -lm -latlas -lpthread
+
+###############################################################################
+# compiler binary
+# CROSS_COMPILE ?= x86_64-linux-
+CC  := $(CROSS_COMPILE)g++
+CXX := $(CROSS_COMPILE)g++
+
+
+###############################################################################
+# library name
+LIBNAME = libSTKLib.a
+
+###############################################################################
+# library-specific modules
+OBJFILES =  common.o          \
+            dict.o            \
+            Error.o           \
+            fileio.o          \
+            filmatch.o        \
+            labels.o          \
+            Matrix.o          \
+            Models_IO.o       \
+            Models.o          \
+            Net_IO.o          \
+            Net.o             \
+            Viterbi.o         \
+            gnu/hsearch_r.o
+
+
+###############################################################################
+# implicit "make all" rule             
+all  : $(LIBNAME)
+	echo "Done :-)"
+
+
+###############################################################################
+# library specific rules
+#
+$(LIBNAME) : $(OBJFILES)
+	$(AR) r $(LIBNAME) $(OBJFILES)
+
+###############################################################################
+# cleans the binaries  
+clean:
+	rm -f *.o 
+	rm -f $(LIBNAME)
+	rm -f *~
+
+###############################################################################
+# runs makedepend to automatically define header files dependencies
+depend:
+	-makedepend -fMakefile.win -Y *.c *.C *.cc 
+    
+
+# DO NOT DELETE

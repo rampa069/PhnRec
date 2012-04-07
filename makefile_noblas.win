@@ -1,0 +1,85 @@
+###############################################################################
+# STK paths
+STKLIB  = STKLib
+STKINCL = $(STKLIB)
+
+###############################################################################
+# Archiver Binary
+AR = ar
+
+###############################################################################
+# compiler options
+CFLAGS = -static -static-libgcc -g -DDOUBLEPRECISION=0 -D_REENTRANT -I$(STKINCL) -I$(STKINCL)\\gnu \
+         -D NN_FAST_EXP -D WIN32 -O2 -L$(STKLIB)
+CXXFLAGS = $(CFLAGS)
+CPPFLAGS = $(CFLAGS)
+
+###############################################################################
+# linker options
+LDFLAGS = -L$(STKLIB) -static -static-libgcc
+LDLIBS = -lSTKLib -lwinmm
+
+
+###############################################################################
+# compiler binary
+# CROSS_COMPILE ?= x86_64-linux-
+
+CC  := $(CROSS_COMPILE)g++
+CXX := $(CROSS_COMPILE)g++
+
+
+DLLTOOL=dlltool
+
+
+O_FILES   = phnrec.o \
+            melbanks.o \
+            dspc.o \
+            traps.o \
+            nn.o \
+            configz.o \
+            alaw.o \
+            wfsource.o \
+            netgen.o \
+            srec.o \
+            filename.o \
+            kwsnetg.o \
+            thresholds.o \
+            encode.o \
+            myrand.o \
+            lexicon.o \
+            gptrans.o \
+            fsm.o \
+            fsmcache.o \
+            phntrans.o \
+            phntranscheck.o \
+            norm.o \
+            decoder.o \
+            phndec.o \
+            stkinterface.o \
+            plp.o \
+            sxmlparser.o \
+            getopt.o
+
+.PHONY : all clean depend
+
+###############################################################################
+# default rule
+all : libSTKLib.a phnrec
+
+
+###############################################################################
+phnrec : $(O_FILES)
+
+###############################################################################
+libSTKLib.a:
+	cd STKLib && make -f makefile.win && cd ..
+
+
+###############################################################################
+clean :
+	echo aa
+	del *.o
+	del phnrec.exe
+	del STKLib\*.o
+	del STKLib\*.a
+	del STKLib\gnu\*.o

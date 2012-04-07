@@ -1,0 +1,48 @@
+
+Description of PhnRec modules
+
+* alaw.{cpp,h}			Alaw -> linear mapping table
+* cblas.h			CBLAS headers
+* config.h			Default values for traps.{cpp,h}
+* configz.{cpp,h}		Configuration management
+* decoder.{cpp,h}		Decoder interface, abstract class
+* dspc.{cpp,h}			Signal processing functions
+  encode.{cpp,h}		Very primitive cypher (for lexicon.{cpp,h})
+* fexp.h			Fast exponentil and softmax (for nn.{cpp,h})
+* filename.{cpp,h}		File management rutines
+  fsm.{cpp,fsm.h}		Finite state machine reading class, AT&T format
+  fsmcache.{cpp,h}		Node cache for fsmcache.{cpp,h}
+* getopt.{cpp,h}        	Command line parsing, unix like function 
+  gptrans.{cpp,h}		Grapheme to phoneme conversion
+  kwsnetg.{cpp,h}		KWS network generator for STK decoder
+  lexicon.{cpp,h}		Lexicon management
+* lwfsource.{cpp,h}		Linux waveform source
+  makefile.lin			Makefile for Linux, gcc, BLAS (ATLAS)
+  makefile.win			Makefile for Windows, gcc, BLAS (ATLAS)
+  makefile_noblas.lin           Makefile for Linux, gcc
+  makefile_noblas.win           Makefile for Windows, gcc
+* makefile_phnrec.lin		Makefile for Linux, PhnRec only, gcc, BLAS (Intel MKL)
+* makefile_phnrec.win		Makefile for Windows, PhnRec only, Visual C++, BLAS (intel MKL)
+* makefile_phnrec.win_gcc_atlas Makefile for Windows, PhnRec only, gcc, BLAS (ATLAS)
+* matrix.h			Matrix operation rutines, template
+* melbanks.{cpp,h}		Mel-bank extraction
+  myrand.{cpp,h}		Random generator (to be the same under different platforms)
+  netgen.{cpp,h}		Phoneme loop network generator for STK decoder
+* nn.{cpp,h}			Neural network forward pass
+* norm.{cpp,h}			On-line per-frame normalizations
+* phndec.{cpp,h}		Phoneme loop decoder
+* phnrec.cpp			Command line interface to the package
+  phntrans.{cpp,h}		Phonetic transcription, a switch between lexicon and G2P
+  phntranscheck.{cpp,h}		Phonetic transcription checker (if the transcription is typed)
+  plp.{cpp,h}			PLP features calculation
+* soundcard.h			Header for sound card functions (Linux)
+* srec.{cpp,h}			A class integrating everything
+  stkinterface.{cpp,h}		Interface to STK decoder
+  sxmlparser.{cpp,h}		XML parser (for norm.{cpp,h})
+  thresholds.{cpp,h}		Confidence thresholds management for KWS
+* traps.{cpp,h}			Forward through structure of NN, posterior prob. estimator
+* wfsource.{cpp,h}		MS Windows waveforms source
+
+-------------------------------------------------------------------------------
+
+* used in PHNREC_ONLY mode

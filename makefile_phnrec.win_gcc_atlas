@@ -1,0 +1,78 @@
+###############################################################################
+# STK paths
+STKLIB   = STKLib
+STKINCL  = $(STKLIB)
+
+BLASLIB  = atlas.dll
+#mkl_p4.dll
+
+###############################################################################
+# Archiver Binary
+AR = ar
+
+###############################################################################
+# compiler options
+CFLAGS = -g -DUSE_BLAS -DDOUBLEPRECISION=0 -D_REENTRANT -I. -I$(STKINCL) -I$(STKINCL)\\gnu \
+         -D NN_FAST_EXP -D WIN32 -D PHNREC_ONLY -O2 -L$(STKLIB)
+CXXFLAGS = $(CFLAGS)
+
+###############################################################################
+# linker options
+LDFLAGS = 
+LDLIBS = -lwinmm $(BLASLIB)
+
+
+###############################################################################
+# compiler binary
+# CROSS_COMPILE ?= x86_64-linux-
+
+CC  := $(CROSS_COMPILE)g++
+CXX := $(CROSS_COMPILE)g++
+
+
+DLLTOOL=dlltool
+
+
+O_FILES   = melbanks.o \
+            dspc.o \
+            traps.o \
+            nn.o \
+            configz.o \
+            alaw.o \
+            wfsource.o \
+            srec.o \
+            filename.o \
+            encode.o \
+            myrand.o \
+            norm.o \
+            decoder.o \
+            phndec.o \
+            plp.o \
+            sxmlparser.o \
+            getopt.o
+
+
+.PHONY : all clean depend
+
+###############################################################################
+# default rule
+all : phnrec
+
+
+###############################################################################
+libphnrec.a: $(O_FILES) 
+	$(AR) r libphnrec.a $(O_FILES)
+
+
+###############################################################################
+phnrec : phnrec.o $(O_FILES)
+
+
+###############################################################################
+clean :
+	rm -f *.o
+	rm -f phnrec.exe
+	rm -f STKLib/*.o
+	rm -f STKLib/*.a
+	rm -f STKLib/gnu/*.o
+

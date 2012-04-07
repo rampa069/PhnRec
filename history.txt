@@ -1,0 +1,11 @@
+ 7. 2. 2006 - fixed bug in the -p switch
+            - fixed bug in frame to time conversion
+15. 3. 2006 - new STK library - an arbitrary language network in the HTK format can be used for decoding
+                              - a structure of linear transforms can be used in parameterization
+            - calculation of HTK compatible PLP features added
+	    - fixed bug in incompatible Linux/Windows libraries
+	    - fixed bug in processing of file lists
+	    - added fast (Quicknet compatible) evaluation of exponentials
+
+
+	    

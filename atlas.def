@@ -1,0 +1,2 @@
+; dlltool -D atlas.dll -z atlas.def -a -l libatlas.a
+EXPORTS

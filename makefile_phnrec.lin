@@ -1,0 +1,59 @@
+###############################################################################
+
+BLASLIB  = libmkl_p4.so libguide.so  # if the files are in curr. dir. "export LD_LIBRARY_PATH=."
+#BLASLIB  = -l cblas -l atlas 
+
+SOUNDLIB = -l pthread                # pthread is used in the LWFSource class
+
+###############################################################################
+# compiler options
+CFLAGS = -g -I . -DUSE_BLAS -D NN_FAST_EXP -D PHNREC_ONLY -O2
+CXXFLAGS = $(CFLAGS)
+
+###############################################################################
+# linker options
+LDFLAGS = 
+LDLIBS = $(SOUNDLIB) $(BLASLIB)
+
+
+###############################################################################
+# compiler binary
+# CROSS_COMPILE ?= x86_64-linux-
+
+CC  = $(CROSS_COMPILE)g++
+CXX = $(CROSS_COMPILE)g++
+
+
+O_FILES   = melbanks.o \
+            dspc.o \
+            traps.o \
+            nn.o \
+            configz.o \
+            alaw.o \
+            lwfsource.o \
+            srec.o \
+            filename.o \
+            norm.o \
+            decoder.o \
+            phndec.o \
+            sxmlparser.o \
+            getopt.o \
+            phnrec.o
+
+
+###############################################################################
+# default rule
+all : phnrec.exe
+
+
+###############################################################################
+phnrec.exe : $(O_FILES)
+	$(CC) -o phnrec $(CXXFLAGS) $(O_FILES) $(SOUNDLIB) $(BLASLIB)
+
+###############################################################################
+clean :
+	rm -f *.o
+	rm -f phnrec.exe
+
+###############################################################################
+

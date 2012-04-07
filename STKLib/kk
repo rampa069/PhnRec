@@ -1,0 +1,95 @@
+common.C:112:3: aviso: conversión obsoleta de una constante de cadena a ‘char*’ [-Wwrite-strings]
+common.C:112:3: aviso: conversión obsoleta de una constante de cadena a ‘char*’ [-Wwrite-strings]
+common.C:112:3: aviso: conversión obsoleta de una constante de cadena a ‘char*’ [-Wwrite-strings]
+common.C:112:3: aviso: conversión obsoleta de una constante de cadena a ‘char*’ [-Wwrite-strings]
+common.C:112:3: aviso: conversión obsoleta de una constante de cadena a ‘char*’ [-Wwrite-strings]
+common.C:112:3: aviso: conversión obsoleta de una constante de cadena a ‘char*’ [-Wwrite-strings]
+common.C:112:3: aviso: conversión obsoleta de una constante de cadena a ‘char*’ [-Wwrite-strings]
+common.C:112:3: aviso: conversión obsoleta de una constante de cadena a ‘char*’ [-Wwrite-strings]
+common.C:112:3: aviso: conversión obsoleta de una constante de cadena a ‘char*’ [-Wwrite-strings]
+common.C:112:3: aviso: conversión obsoleta de una constante de cadena a ‘char*’ [-Wwrite-strings]
+common.C:112:3: aviso: conversión obsoleta de una constante de cadena a ‘char*’ [-Wwrite-strings]
+common.C:112:3: aviso: conversión obsoleta de una constante de cadena a ‘char*’ [-Wwrite-strings]
+common.C:112:3: aviso: conversión obsoleta de una constante de cadena a ‘char*’ [-Wwrite-strings]
+common.C: En la función ‘int getHTKstr(char*, char**)’:
+common.C:570:29: aviso: conversión obsoleta de una constante de cadena a ‘char*’ [-Wwrite-strings]
+common.C:582:25: aviso: conversión obsoleta de una constante de cadena a ‘char*’ [-Wwrite-strings]
+common.C: En la función ‘char* expandFilterCommand(const char*, const char*)’:
+common.C:607:22: aviso: conversión obsoleta de una constante de cadena a ‘char*’ [-Wwrite-strings]
+common.C: En la función ‘char* readline(FILE*, ReadlineData*)’:
+common.C:635:33: aviso: conversión obsoleta de una constante de cadena a ‘char*’ [-Wwrite-strings]
+common.C:666:35: aviso: conversión obsoleta de una constante de cadena a ‘char*’ [-Wwrite-strings]
+common.C: En el ámbito global:
+common.C:675:81: aviso: conversión obsoleta de una constante de cadena a ‘char*’ [-Wwrite-strings]
+common.C:675:81: aviso: conversión obsoleta de una constante de cadena a ‘char*’ [-Wwrite-strings]
+common.C:675:81: aviso: conversión obsoleta de una constante de cadena a ‘char*’ [-Wwrite-strings]
+common.C:675:81: aviso: conversión obsoleta de una constante de cadena a ‘char*’ [-Wwrite-strings]
+common.C:675:81: aviso: conversión obsoleta de una constante de cadena a ‘char*’ [-Wwrite-strings]
+common.C:675:81: aviso: conversión obsoleta de una constante de cadena a ‘char*’ [-Wwrite-strings]
+common.C:675:81: aviso: conversión obsoleta de una constante de cadena a ‘char*’ [-Wwrite-strings]
+common.C:675:81: aviso: conversión obsoleta de una constante de cadena a ‘char*’ [-Wwrite-strings]
+common.C:675:81: aviso: conversión obsoleta de una constante de cadena a ‘char*’ [-Wwrite-strings]
+common.C:675:81: aviso: conversión obsoleta de una constante de cadena a ‘char*’ [-Wwrite-strings]
+common.C:675:81: aviso: conversión obsoleta de una constante de cadena a ‘char*’ [-Wwrite-strings]
+common.C:675:81: aviso: conversión obsoleta de una constante de cadena a ‘char*’ [-Wwrite-strings]
+common.C:675:81: aviso: conversión obsoleta de una constante de cadena a ‘char*’ [-Wwrite-strings]
+common.C:675:81: aviso: conversión obsoleta de una constante de cadena a ‘char*’ [-Wwrite-strings]
+common.C:675:81: aviso: conversión obsoleta de una constante de cadena a ‘char*’ [-Wwrite-strings]
+common.C:675:81: aviso: conversión obsoleta de una constante de cadena a ‘char*’ [-Wwrite-strings]
+common.C:675:81: aviso: conversión obsoleta de una constante de cadena a ‘char*’ [-Wwrite-strings]
+common.C:675:81: aviso: conversión obsoleta de una constante de cadena a ‘char*’ [-Wwrite-strings]
+common.C: En la función ‘void InsertConfigParam(MyHSearchData*, const char*, const char*, int)’:
+common.C:718:55: aviso: conversión obsoleta de una constante de cadena a ‘char*’ [-Wwrite-strings]
+common.C:728:9: aviso: conversión obsoleta de una constante de cadena a ‘char*’ [-Wwrite-strings]
+common.C: En la función ‘void ReadConfig(const char*, MyHSearchData*)’:
+common.C:747:7: aviso: conversión obsoleta de una constante de cadena a ‘char*’ [-Wwrite-strings]
+common.C:768:26: aviso: conversión obsoleta de una constante de cadena a ‘char*’ [-Wwrite-strings]
+common.C:773:9: aviso: conversión obsoleta de una constante de cadena a ‘char*’ [-Wwrite-strings]
+common.C:775:20: aviso: conversión obsoleta de una constante de cadena a ‘char*’ [-Wwrite-strings]
+common.C:782:7: aviso: conversión obsoleta de una constante de cadena a ‘char*’ [-Wwrite-strings]
+common.C: En la función ‘void CheckCommandLineParamUse(MyHSearchData*)’:
+common.C:797:9: aviso: conversión obsoleta de una constante de cadena a ‘char*’ [-Wwrite-strings]
+common.C: En la función ‘long int GetParamInt(MyHSearchData*, const char*, long int)’:
+common.C:885:7: aviso: conversión obsoleta de una constante de cadena a ‘char*’ [-Wwrite-strings]
+common.C: En la función ‘float GetParamFlt(MyHSearchData*, const char*, float)’:
+common.C:905:7: aviso: conversión obsoleta de una constante de cadena a ‘char*’ [-Wwrite-strings]
+common.C: En la función ‘bool GetParamBool(MyHSearchData*, const char*, bool)’:
+common.C:924:7: aviso: conversión obsoleta de una constante de cadena a ‘char*’ [-Wwrite-strings]
+common.C: En la función ‘int GetParamEnum(MyHSearchData*, const char*, int, ...)’:
+common.C:968:5: aviso: conversión obsoleta de una constante de cadena a ‘char*’ [-Wwrite-strings]
+common.C: En la función ‘int GetDerivParams(MyHSearchData*, int*, int**, int*, int*, char**, char**, const char**, char**, char**, const char**, const char**, const char*, int)’:
+common.C:1016:29: aviso: conversión obsoleta de una constante de cadena a ‘char*’ [-Wwrite-strings]
+common.C:1026:29: aviso: conversión obsoleta de una constante de cadena a ‘char*’ [-Wwrite-strings]
+common.C:1035:27: aviso: conversión obsoleta de una constante de cadena a ‘char*’ [-Wwrite-strings]
+common.C:1049:13: aviso: conversión obsoleta de una constante de cadena a ‘char*’ [-Wwrite-strings]
+common.C:1052:38: aviso: conversión obsoleta de una constante de cadena a ‘char*’ [-Wwrite-strings]
+common.C:1066:34: aviso: conversión obsoleta de una constante de cadena a ‘char*’ [-Wwrite-strings]
+common.C: En la función ‘FILE* my_fopen(const char*, const char*, const char*)’:
+common.C:1095:9: aviso: conversión obsoleta de una constante de cadena a ‘char*’ [-Wwrite-strings]
+common.C:1102:9: aviso: conversión obsoleta de una constante de cadena a ‘char*’ [-Wwrite-strings]
+common.C: En la función ‘int ParseOptions(int, char**, const char*, const char*, MyHSearchData*)’:
+common.C:1159:9: aviso: conversión obsoleta de una constante de cadena a ‘char*’ [-Wwrite-strings]
+common.C:1173:9: aviso: conversión obsoleta de una constante de cadena a ‘char*’ [-Wwrite-strings]
+common.C:1180:25: aviso: conversión obsoleta de una constante de cadena a ‘char*’ [-Wwrite-strings]
+common.C:1183:19: aviso: conversión obsoleta de una constante de cadena a ‘char*’ [-Wwrite-strings]
+common.C:1203:26: aviso: conversión obsoleta de una constante de cadena a ‘char*’ [-Wwrite-strings]
+common.C:1209:18: aviso: conversión obsoleta de una constante de cadena a ‘char*’ [-Wwrite-strings]
+common.C:1213:22: aviso: conversión obsoleta de una constante de cadena a ‘char*’ [-Wwrite-strings]
+common.C:1233:25: aviso: conversión obsoleta de una constante de cadena a ‘char*’ [-Wwrite-strings]
+common.C:1235:32: aviso: conversión obsoleta de una constante de cadena a ‘char*’ [-Wwrite-strings]
+common.C:1248:41: aviso: conversión obsoleta de una constante de cadena a ‘char*’ [-Wwrite-strings]
+common.C:1250:41: aviso: conversión obsoleta de una constante de cadena a ‘char*’ [-Wwrite-strings]
+common.C:1259:21: aviso: conversión obsoleta de una constante de cadena a ‘char*’ [-Wwrite-strings]
+common.C:1263:19: aviso: conversión obsoleta de una constante de cadena a ‘char*’ [-Wwrite-strings]
+common.C:1268:7: aviso: conversión obsoleta de una constante de cadena a ‘char*’ [-Wwrite-strings]
+common.C:1271:7: aviso: conversión obsoleta de una constante de cadena a ‘char*’ [-Wwrite-strings]
+common.C: En la función ‘FileListElem** AddFileElem(FileListElem**, char*)’:
+common.C:1283:17: aviso: conversión obsoleta de una constante de cadena a ‘char*’ [-Wwrite-strings]
+common.C: En la función ‘bool ProcessMask(const string&, const string&, std::string&)’:
+common.C:1462:64: aviso: se sugieren paréntesis alrededor de la asignación usada como valor verdadero [-Wparentheses]
+In file included from Models.h:16:0,
+                 from dict.h:16,
+                 from dict.C:13:
+Matrix.h:15:23: error fatal: clapack.h: No existe el archivo o el directorio
+compilación terminada.
+make: *** [dict.o] Error 1

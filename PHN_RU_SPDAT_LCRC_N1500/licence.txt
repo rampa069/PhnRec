@@ -1,0 +1,11 @@
+/*****************************************************************************
+ *    copyright            : (C) 2004-2006 by Petr Schwarz & Pavel Matejka   *
+ *                                          UPGM,FIT,VUT,Brno                *
+ *    email                : {schwarzp,matejkap}@fit.vutbr.cz                *
+ *****************************************************************************
+
+Model files (directories PHN_CZ_SPDAT_LCRC_N1500, PHN_HU_SPDAT_LCRC_N1500,
+             PHN_RU_SPDAT_LCRC_N1500, PHN_EN_TIMIT_LCRC_N500)
+
+Licence for use for research and individual purposes is granted.
+For any other use, please contact Jan Cernocky (cernocky@fit.vutbr.cz)
